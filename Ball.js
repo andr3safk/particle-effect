@@ -19,5 +19,13 @@ class Ball {
     move(){
         this.x += this.dirX * this.speed;
         this.y += this.dirY * this.speed;
+
+        if(this.x + this.radio > canvas.width || this.x<0){
+            this.dirX *= -1
+        };
+
+        if(this.y + this.radio > canvas.height || this.y<0){
+            this.dirY *= -1
+        };
     }
 }
