@@ -6,7 +6,7 @@ class Ball {
         this.radio = 10;
         this.dirX = (Math.random() * 2) - 1;
         this.dirY = (Math.random() * 2) - 1;
-        this.speed = 5;
+        this.speed = 3.7;
     }
 
     draw() {

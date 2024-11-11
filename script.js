@@ -18,12 +18,19 @@ function animation(){
     balls.forEach(ball =>{
 
         balls.forEach(ball2 => {
-            ctx.beginPath();
-            ctx.moveTo(ball.x, ball.y);
-            ctx.lineTo(ball2.x, ball2.y);
-            ctx.stroke();
-            ctx.closePath();
-        })
+
+            let dx = ball2.x - ball.x;
+            let dy = ball2.y - ball.y;
+            let dist = Math.sqrt(dx ** 2 + dy ** 2)
+
+            if(dist < 200){
+                ctx.beginPath();
+                ctx.moveTo(ball.x, ball.y);
+                ctx.lineTo(ball2.x, ball2.y);
+                ctx.stroke();
+                ctx.closePath();
+            }
+        });
 
         ball.draw();
         ball.move();
